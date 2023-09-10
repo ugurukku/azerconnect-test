@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: BLOG-SERVICE
+  datasource:
+    url: jdbc:postgresql://localhost:5432/azerconnect_test
+    username: postgres
+    password: ugur2003
+  config:
+    import: optional:configserver:http://localhost:8085
+server:
+  port: 8081

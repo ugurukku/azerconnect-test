@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ugurukku.userservice.repository.UserRepository">
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" >
+        INSERT INTO users (name, surname, email, password, role)
+        VALUES (#{name}, #{surname}, #{email}, #{password}, #{role})
+    </insert>
+
+    <select id="findById" resultType="com.ugurukku.userservice.models.mybatis.user.User">
+        SELECT * FROM users
+        WHERE id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.ugurukku.userservice.models.mybatis.user.User">
+        UPDATE users
+        SET name = #{name}, surname = #{surname}, email = #{email}, password = #{password},  role= #{role}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteById">
+        DELETE FROM users
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

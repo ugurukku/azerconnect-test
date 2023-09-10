@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: BLOG_SERVICE
+  profiles:
+    active: local
+  liquibase:
+    enabled: true
+    change-log: classpath:migrations/changelog-master.xml
+mybatis:
+  mapper-locations: classpath*:**/mappers/*Mapper.xml
